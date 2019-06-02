@@ -2,15 +2,15 @@
 
 This app is designed to take in a specific request from the user and then return data for that given request using node.js.
 
-The valid request are:
-    *  concert-this <band name>
-    *  spotify-this-song <song name>
-    *  movie-this <movie name>
-    *  do-what-it-says
+The valid requests are:
+    *concert-this <band name>
+    *spotify-this-song <song name>
+    *movie-this <movie name>
+    *do-what-it-says
 
 **concert-this**
 
-This uses npm axios to get data from the Bands in Town API.  A band name is entered by the user and information about upcoming concerts displays.
+This uses npm axios to get data from the Bands in Town API.  A band name is entered by the user and information about upcoming concerts displays. NPM moment was also used to convert the date.
 
 ![concert-this](/concert-this.png)
 
