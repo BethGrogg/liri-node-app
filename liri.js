@@ -1,9 +1,7 @@
 require("dotenv").config();
 
-var Spotify = require('spotify-web-api-node');
-
+var Spotify = require('node-spotify-api');
 var keys = require("./keys.js");
-
 var spotify = new Spotify(keys.spotify);
 
 var axios = require("axios");
@@ -13,8 +11,8 @@ moment().format();
 
 var fs = require('fs');
 
+//user inputs
 var request = process.argv[2];
-
 var name = process.argv[3];
 
 //This section is for getting concert information
@@ -23,9 +21,10 @@ if (request == 'concert-this') {
 
     axios.get(queryUrl).then(
         function(response) {
-            console.log("Venue Name: " + response.description);
-            console.log("Venue location: " + response.venue);
-            console.log("Event Date: " + response.datetime);
+        
+           console.log("Venue Name: " + response[0].venue.name +
+           "\nVenue location: " + response[0].venue.city +
+           "\nEvent Date: " + response[0].datetime);
     });
 
 }
@@ -34,12 +33,28 @@ if (request == 'concert-this') {
 if (request == 'spotify-this-song') {
 
     // Search tracks
-spotify.searchTracks(name)
-.then(function(data) {
-  console.log(data.body);
-}, function(err) {
-  console.error(err);
-});
+    spotify.search({ type: 'track', query: name }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+        else {
+            for (i = 0; i < data.tracks.items.length && i < 5; i++){
+            
+                var song = data.tracks.items[i];
+               
+                 //Artist(s)
+                console.log("Artist: " + song.artists[0].name +
+                //The song's name
+                "\nSong Name: " + song.name +
+                //A preview link of the song
+                "\nLink to Song: " + song.preview_url +
+                //The album that the song is from
+                "\nAlbum Name: " + song.album.name);
+            }
+        };  
+
+     
+      });
 
 }
 
@@ -50,13 +65,13 @@ if (request == 'movie-this') {
 
     axios.get(queryUrl).then(
         function(response) {
-            console.log("Movie Name: " + response.data.Title);
-            console.log("Year: " + response.data.Year);
-            console.log("OMDB Rating: " + response.data.imdbRating);
-            console.log("Rotten Tomatoes Rating: " + response.data.Ratings);
-            console.log("Country it was produced: " + response.data.Country);
-            console.log("Movie Language: " + response.data.Language);
-            console.log("Movie Plot: " + response.data.Plot);
-            console.log("Actors: " + response.data.Actors);
+            console.log("Movie Name: " + response.data.Title +
+            "\nYear: " + response.data.Year +
+            "\nOMDB Rating: " + response.data.imdbRating +
+            "\nRotten Tomatoes Rating: " + response.data.Ratings +
+            "\nCountry it was produced: " + response.data.Country +
+            "\nMovie Language: " + response.data.Language +
+            "\nMovie Plot: " + response.data.Plot +
+            "\nActors: " + response.data.Actors);
         });
 }
