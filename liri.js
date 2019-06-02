@@ -45,15 +45,15 @@ function doConcert(name) {
 
     axios.get(queryUrl).then(
         function(response) {
-            console.log(response[0].venue);
+           
      //var date = moment().format('L')
-        //  console.log("\nVenue Name: " + response[0].venue.name +
-        //     "\nVenue location: " + response[0].venue.city +
-        //    "\nEvent Date: " + response[0].datetime);
+          console.log("\nVenue Name: " + response.data[0].venue.name +
+            "\nVenue location: " + response.data[0].venue.city +
+           "\nEvent Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
 
-        //    appendFile("\nVenue Name: " + response.venue.name +
-        //    "\nVenue location: " + response.venue.city +
-        //    "\nEvent Date: " + date);
+           appendFile("\nVenue Name: " + response.data[0].venue.name +
+            "\nVenue location: " + response.data[0].venue.city +
+            "\nEvent Date: " +  moment(response.data[0].datetime).format("MM/DD/YYYY"));
     });
 
 }
@@ -110,10 +110,11 @@ function doMovie(name) {
 
     axios.get(queryUrl).then(
         function(response) {
+            
             console.log("\nMovie Name: " + response.data.Title +
             "\nYear: " + response.data.Year +
-            "\nOMDB Rating: " + response.data.imdbRating +
-            "\nRotten Tomatoes Rating: " + response.data.Ratings +
+            "\nIMDB Rating: " + response.data.imdbRating +
+            "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value +
             "\nCountry it was produced: " + response.data.Country +
             "\nMovie Language: " + response.data.Language +
             "\nMovie Plot: " + response.data.Plot +
@@ -122,8 +123,8 @@ function doMovie(name) {
 
         appendFile("\nMovie Name: " + response.data.Title +
         "\nYear: " + response.data.Year +
-        "\nOMDB Rating: " + response.data.imdbRating +
-        "\nRotten Tomatoes Rating: " + response.data.Ratings +
+        "\nIMDB Rating: " + response.data.imdbRating +
+        "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value +
         "\nCountry it was produced: " + response.data.Country +
         "\nMovie Language: " + response.data.Language +
         "\nMovie Plot: " + response.data.Plot +
