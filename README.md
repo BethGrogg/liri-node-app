@@ -3,10 +3,10 @@
 This app is designed to take in a specific request from the user and then return data for that given request using node.js.
 
 The valid request are:
-    * concert-this <band name>
-    * spotify-this-song <song name>
-    * movie-this <movie name>
-    * do-what-it-says
+    *  concert-this <band name>
+    *  spotify-this-song <song name>
+    *  movie-this <movie name>
+    *  do-what-it-says
 
 **concert-this**
 
@@ -31,6 +31,10 @@ This uses npm axios to get data from the Omdb API.  The user enters a movie name
 This reads random.txt and uses the information contained to determine what data will be returned.  Currently, random.txt contains *spotify-this-song,"I Want it That Way"* so it would return information from Spotify about the song "I Want it That Way".
 
 ![do-what-it-says](/do-what-it-says.png)
+
+This project also adds the returned information to log.txt.
+
+![adding to log.txt](/adding to log.txt.png)
 
 https://github.com/BethGrogg/liri-node-app
 
