@@ -3,9 +3,9 @@
 This app is designed to take in a specific request from the user and then return data for that given request using node.js.
 
 The valid requests are:
-    *concert-this <band name>
-    *spotify-this-song <song name>
-    *movie-this <movie name>
+    *concert-this 'band name'
+    *spotify-this-song 'song name'
+    *movie-this 'movie name'
     *do-what-it-says
 
 **concert-this**
