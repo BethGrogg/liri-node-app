@@ -34,7 +34,7 @@ This reads random.txt and uses the information contained to determine what data 
 
 This project also adds the returned information to log.txt.
 
-![adding to log.txt](/adding to log.txt.png)
+![adding-to-log](/adding-to-log.png)
 
 https://github.com/BethGrogg/liri-node-app
 
