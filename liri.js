@@ -32,6 +32,9 @@ if (request == 'concert-this') {
 //This section is for getting song information
 if (request == 'spotify-this-song') {
 
+    if (name == null) {
+        name = 'The Sign';
+    }
     // Search tracks
     spotify.search({ type: 'track', query: name }, function(err, data) {
         if (err) {
@@ -61,6 +64,11 @@ if (request == 'spotify-this-song') {
 
 //This section is for getting movie information
 if (request == 'movie-this') {
+
+    if (name == null) {
+        name = 'Mr. Nobody';
+    };
+
     var queryUrl = "http://www.omdbapi.com/?t=" + name + "&y=&plot=short&apikey=trilogy";
 
     axios.get(queryUrl).then(
@@ -75,3 +83,12 @@ if (request == 'movie-this') {
             "\nActors: " + response.data.Actors);
         });
 }
+
+//This section is for do-what-it-says
+if (request == 'do-what-it-says') {
+
+    fs.readFile("random.txt", 'utf8', function(err, data){
+        console.log(data);
+})
+
+};
