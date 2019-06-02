@@ -13,19 +13,24 @@ The valid request are:
 This uses npm axios to get data from the Bands in Town API.  A band name is entered by the user and information about upcoming concerts displays.
 
 ![concert-this](/concert-this.png)
-Format: ![Alt Text](url)
 
 **spotify-this-song**
 
 This uses npm node-spotify-api to interact with Spotify to return information to the user based on the song name the user entered.
 
+![spotify-this-song](/spotify-this-song.png)
+
 **movie-this**
 
 This uses npm axios to get data from the Omdb API.  The user enters a movie name and then information about that movie is returned.
 
+![movie-this](/movie-this.png)
+
 **do-what-it-says**
 
 This reads random.txt and uses the information contained to determine what data will be returned.  Currently, random.txt contains *spotify-this-song,"I Want it That Way"* so it would return information from Spotify about the song "I Want it That Way".
+
+![do-what-it-says](/do-what-it-says.png)
 
 https://github.com/BethGrogg/liri-node-app
 
