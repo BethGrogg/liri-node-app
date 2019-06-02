@@ -1,10 +1,17 @@
 require("dotenv").config();
 
+var Spotify = require('spotify-web-api-node');
+
 var keys = require("./keys.js");
 
-//var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 
 var axios = require("axios");
+
+var moment = require('moment');
+moment().format();
+
+var fs = require('fs');
 
 var request = process.argv[2];
 
@@ -26,7 +33,14 @@ if (request == 'concert-this') {
 //This section is for getting song information
 if (request == 'spotify-this-song') {
 
-    
+    // Search tracks
+spotify.searchTracks(name)
+.then(function(data) {
+  console.log(data.body);
+}, function(err) {
+  console.error(err);
+});
+
 }
 
 
