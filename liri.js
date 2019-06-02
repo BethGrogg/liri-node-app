@@ -45,14 +45,15 @@ function doConcert(name) {
 
     axios.get(queryUrl).then(
         function(response) {
-        
-           console.log("Venue Name: " + response[0].venue.name +
-           "\nVenue location: " + response[0].venue.city +
-           "\nEvent Date: " + response[0].datetime);
+        //    console.log(response);
+     //var date = moment().format('L')
+        //    console.log("\nVenue Name: " + response.venue.name +
+        //    "\nVenue location: " + response.venue.city +
+           console.log("\nEvent Date: " + response[0].data.datetime);
 
-           appendFile("Venue Name: " + response[0].venue.name +
-           "\nVenue location: " + response[0].venue.city +
-           "\nEvent Date: " + response[0].datetime);
+        //    appendFile("\nVenue Name: " + response.venue.name +
+        //    "\nVenue location: " + response.venue.city +
+        //    "\nEvent Date: " + date);
     });
 
 }
@@ -74,7 +75,7 @@ function doSpotify(name) {
                 var song = data.tracks.items[i];
                
                  //Artist(s)
-                console.log("Artist: " + song.artists[0].name +
+                console.log("\nArtist: " + song.artists[0].name +
                 //The song's name
                 "\nSong Name: " + song.name +
                 //A preview link of the song
@@ -82,7 +83,7 @@ function doSpotify(name) {
                 //The album that the song is from
                 "\nAlbum Name: " + song.album.name);
 
-                appendFile("Artist: " + song.artists[0].name +
+                appendFile("\nArtist: " + song.artists[0].name +
                 //The song's name
                 "\nSong Name: " + song.name +
                 //A preview link of the song
@@ -109,7 +110,7 @@ function doMovie(name) {
 
     axios.get(queryUrl).then(
         function(response) {
-            console.log("Movie Name: " + response.data.Title +
+            console.log("\nMovie Name: " + response.data.Title +
             "\nYear: " + response.data.Year +
             "\nOMDB Rating: " + response.data.imdbRating +
             "\nRotten Tomatoes Rating: " + response.data.Ratings +
@@ -119,7 +120,7 @@ function doMovie(name) {
             "\nActors: " + response.data.Actors);
        
 
-        appendFile("Movie Name: " + response.data.Title +
+        appendFile("\nMovie Name: " + response.data.Title +
         "\nYear: " + response.data.Year +
         "\nOMDB Rating: " + response.data.imdbRating +
         "\nRotten Tomatoes Rating: " + response.data.Ratings +
