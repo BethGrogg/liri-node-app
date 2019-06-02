@@ -1,0 +1,15 @@
+Movie Name: Almost Famous
+Year: 2000
+OMDB Rating: 7.9
+Rotten Tomatoes Rating: [object Object],[object Object],[object Object]
+Country it was produced: USA
+Movie Language: English, French
+Movie Plot: A high-school boy is given the chance to write a story for Rolling Stone Magazine about an up-and-coming rock band as he accompanies them on their concert tour.
+Actors: Billy Crudup, Frances McDormand, Kate Hudson, Jason LeeMovie Name: Frozen
+Year: 2013
+OMDB Rating: 7.5
+Rotten Tomatoes Rating: [object Object],[object Object],[object Object]
+Country it was produced: USA
+Movie Language: English, Norwegian
+Movie Plot: When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+Actors: Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
