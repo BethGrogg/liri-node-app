@@ -45,11 +45,11 @@ function doConcert(name) {
 
     axios.get(queryUrl).then(
         function(response) {
-        //    console.log(response);
+            console.log(response[0].venue);
      //var date = moment().format('L')
-        //    console.log("\nVenue Name: " + response.venue.name +
-        //    "\nVenue location: " + response.venue.city +
-           console.log("\nEvent Date: " + response[0].data.datetime);
+        //  console.log("\nVenue Name: " + response[0].venue.name +
+        //     "\nVenue location: " + response[0].venue.city +
+        //    "\nEvent Date: " + response[0].datetime);
 
         //    appendFile("\nVenue Name: " + response.venue.name +
         //    "\nVenue location: " + response.venue.city +
